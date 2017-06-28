@@ -1,0 +1,7 @@
+apply plugin: 'spoon'
+
+spoon{
+    debug = true
+
+    codeCoverage = true
+}

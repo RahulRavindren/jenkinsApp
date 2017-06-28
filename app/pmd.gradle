@@ -1,0 +1,18 @@
+apply plugin: 'pmd'
+
+pmd{
+    ignoreFailures = true
+    reportsDir = file("$project.buildDir/reports/pmd")
+}
+
+task pmd(type: Pmd) {
+    group 'code quality'
+
+    ruleSets = ["java-basic","java-braces","java-strings","java-desgin","java-unusedcode"]
+    source = fileTree('src/main/java')
+
+    reports{
+        xml.enabled = false
+        html.enabled = true
+    }
+}

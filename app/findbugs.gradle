@@ -1,0 +1,27 @@
+apply plugin: 'findbugs'
+
+findbugs{
+    ignoreFailures = true
+    reportsDir = file("$project.buildDir/reports/findbugs/")
+    reportLevel  = "medium"
+    effort = "max"
+}
+
+
+task findbugs(type: FindBugs) {
+    group 'code quality'
+
+
+    classes = fileTree("build/intermediates/classes/mock/debug/")
+    source = fileTree('src/main/java')
+    classpath = files()
+
+    effort = 'max'
+
+    excludeFilter = file('findbugs_filter.xml')
+
+    reports{
+        xml.enabled = false
+        html.enabled = true
+    }
+}
