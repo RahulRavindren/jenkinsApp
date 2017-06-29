@@ -4,6 +4,8 @@ apply from: 'pmd.gradle'
 apply from: 'jacoco.gradle'
 apply from: 'findbugs.gradle'
 apply from: 'spoon.gradle'
+apply plugin: 'me.tatarka.retrolambda'
+
 
 
 android {
@@ -27,6 +29,16 @@ android {
         debug {
 
         }
+    }
+    retrolambda {
+        javaVersion JavaVersion.VERSION_1_6
+        jvmArgs '-arg1', '-arg2'
+        defaultMethods false
+        incremental true
+    }
+    compileOptions {
+        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_8
+        targetCompatibility org.gradle.api.JavaVersion.VERSION_1_8
     }
     buildTypes {
         release {
