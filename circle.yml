@@ -4,8 +4,7 @@ machine:
 
   dependencies:
       pre:
-        - echo y | android update sdk --no-ui --filter android-25,platform-tools,build-tools-25.0.2,extra
-        - sdkmanager --update
+        - echo yes | android update sdk --no-ui --all --filter build-tools-25.0.2,android-25,extra-android-m2repository
 
       cache_directories:
         - /usr/local/android-sdk-linux/platforms/android-25
@@ -16,7 +15,7 @@ machine:
       override:
 
       - mksdcard -l e 512M mysdcard.img
-      - emulator -avd circleci-android22 -no-audio -no-windo -sdcard mysdcard.img:
+      - emulator -avd circleci-android22 -no-audio -no-window -sdcard mysdcard.img:
           background: true
           parallel: true
 
