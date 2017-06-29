@@ -11,7 +11,7 @@ machine:
       - mksdcard -l e 512M mysdcard.img
       - emulator -avd circleci-android22 -no-audio -sdcard mysdcard.img:
           background: true
-          parallet: true
+          parallel: true
 
       - circle-android wait-for-boot
       - sleep 60
