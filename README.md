@@ -1,5 +1,4 @@
-# jenkinsApp
-
+# jenkinsApp [![CircleCI](https://circleci.com/gh/RahulRavindren/jenkinsApp.svg?style=svg)](https://circleci.com/gh/RahulRavindren/jenkinsApp)
 Install the following plugins
 
     1. Findbugs {%link "link" https://plugins.jetbrains.com/plugin/3847-findbugs-idea %}
