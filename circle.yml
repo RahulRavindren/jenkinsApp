@@ -30,6 +30,8 @@ machine:
       - ./gradlew clean lintMockDebug pmd findbugs checkstyle generateCodeCoverageReport
 
       post:
+          #copy sdk licenses to project
+          -cp -r licenses/. $ANDROID_HOME/licenses
           #obtain test result artifacts
           - mkdir -p $CIRCLE_TEST_REPORTS/reports/
           - mv app/build/spoon/ $CIRCLE_TEST_REPORTS/reports/
