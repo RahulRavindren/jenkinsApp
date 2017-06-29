@@ -9,6 +9,8 @@ apply from: 'spoon.gradle'
 android {
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
+
+
     defaultConfig {
         applicationId "com.app.jenkinsapp"
         minSdkVersion rootProject.minSdkVersion
@@ -16,14 +18,25 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    signingConfigs {
+        release {
+
+        }
+        debug {
+
+        }
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug{
             testCoverageEnabled true
+            applicationIdSuffix = ".debug"
         }
     }
     testOptions {
@@ -36,6 +49,12 @@ android {
             }
         }
     }
+    lintOptions {
+        disable 'InvalidPackage'
+        xmlReport false
+        abortOnError true
+        htmlOutput file("build/reports/lint/report.html")
+    }
 }
 
 dependencies {
@@ -44,6 +63,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }
