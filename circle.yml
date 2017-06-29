@@ -20,7 +20,6 @@ machine:
           - echo y | android update sdk --no-ui --all --filter extra-android-m2repository
           - echo y | android update sdk --no-ui --all --filter extra-google-m2repository
           - echo y | android update sdk --no-ui --all --filter extra-android-support
-          - echo y | $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
           - ./gradlew dependencies
        cache_directories:
           - ~/.gradle
