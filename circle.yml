@@ -4,7 +4,8 @@ machine:
 
   dependencies:
       pre:
-        - ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --filter android-25,platform-tools,build-tools-25.0.2,extra
+        - echo y | android update sdk --no-ui --filter android-25,platform-tools,build-tools-25.0.2,extra
+        - sdkmanager --update
 
       cache_directories:
         - /usr/local/android-sdk-linux/platforms/android-25
