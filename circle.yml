@@ -31,7 +31,7 @@ machine:
 
       post:
           #copy sdk licenses to project
-          -cp -r licenses/. $ANDROID_HOME/licenses
+          - cp -r licenses/. $ANDROID_HOME/licenses
           #obtain test result artifacts
           - mkdir -p $CIRCLE_TEST_REPORTS/reports/
           - mv app/build/spoon/ $CIRCLE_TEST_REPORTS/reports/
