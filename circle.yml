@@ -4,12 +4,12 @@ machine:
 
   dependencies:
       pre:
-        - echo y | android udpdate sdk --no ui --all  --filter android-25,tools,platform-tools,build-tools-25.0.2,extra
+        - echo y | android udpdate sdk --no-ui --all --filter android-25,tools,platform-tools,build-tools-25.0.2,extra
   test:
       override:
 
       - mksdcard -l e 512M mysdcard.img
-      - emulator -avd circleci-android22 -no-audio -sdcard mysdcard.img:
+      - emulator -avd circleci-android22 -no-audio -no-windo -sdcard mysdcard.img:
           background: true
           parallel: true
 
@@ -31,9 +31,6 @@ machine:
 
       post:
           #obtain test result artifacts
-          - mkdir -p $CIRCLE_TEST_REPORTS/jnuit/
-          - find . -type f - regex ".*/build/test-results/testMockDebugUnitTest/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
-          - find . -type f -regex ".*/build/outputs/androidTest-results/connected/flavors/MOCK/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
           - mkdir -p $CIRCLE_TEST_REPORTS/reports/
           - mv app/build/spoon/ $CIRCLE_TEST_REPORTS/reports/
           - find . -type f -regex ".*/build/outputs/androidTest-results/connected/flavors/MOCK/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
@@ -53,7 +50,7 @@ machine:
 
           #checkstyle
           - mkdir -p $CIRCLE_TEST_REPORTS/checkstyle/
-          -mv app/build/reports/checkstyle/ $CIRCLE_TEST_REPORTS/checkstyle
+          - mv app/build/reports/checkstyle/ $CIRCLE_TEST_REPORTS/checkstyle
 
           #findbugs
           - mkdir -p $CIRCLE_TEST_REPORTS/findbugs/
