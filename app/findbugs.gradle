@@ -12,7 +12,7 @@ task findbugs(type: FindBugs) {
     group 'code quality'
 
 
-    classes = fileTree("build/intermediates/classes/mock/debug/")
+    classes = fileTree("build/intermediates/classes/debug/")
     source = fileTree('src/main/java')
     classpath = files()
 
@@ -24,4 +24,7 @@ task findbugs(type: FindBugs) {
         xml.enabled = false
         html.enabled = true
     }
+}
+check.doLast {
+    project.tasks.getByName("findbugs").execute()
 }

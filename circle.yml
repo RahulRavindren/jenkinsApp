@@ -47,7 +47,7 @@ machine:
       post:
           #obtain test result artifacts
           - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-          - find . -type f -regex ".*/build/test-results/testMockDebugUnitTest/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+          - find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
           - find . -type f -regex ".*/build/outputs/androidTest-results/connected/flavors/MOCK/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
           - mkdir -p $CIRCLE_TEST_REPORTS/reports/
           - mv app/build/spoon/ $CIRCLE_TEST_REPORTS/reports/

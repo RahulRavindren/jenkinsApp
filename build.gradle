@@ -36,4 +36,9 @@ ext{
     //dependency
     supportLibraryVersion = '25.0.1'
 
+    mockitoCoreVersion = '1.10.19'
+    powerMockVersion = '1.6.4'
+    espressoRunnerVersion = '0.5'
+    espressoVersion = '2.2.2'
+
 }

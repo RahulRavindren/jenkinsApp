@@ -11,7 +11,7 @@ task generateCodeCoverageReport(type: JacocoReport, dependsOn: ["spoonMockDebugA
     description = "Generate Jacoco coverage reports"
 
     classDirectories = fileTree(
-            dir: "$buildDir/intermediates/classes/mock/debug/com/app/jenkinsapp",
+            dir: "$buildDir/intermediates/classes/debug/com/app/jenkinsapp",
             excludes: ['android/**',
                        '**/R*.class',
                        '**/BuildConfig*',
