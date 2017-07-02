@@ -2,17 +2,13 @@ machine:
   environment:
       GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
   dependencies:
-       pre:
-          - echo y | android update sdk --no-ui --all --filter android-25,build-tools-25.0.0,platform-tools,extra
-          - export DISPLAY=:1.0
-       cache_directories:
-          - ~/.gradle
-          - ~/.android
+    pre:
+      - echo y | android update sdk --no-ui --all --filter android-25,tools,platform-tools,build-tools-25.0.0,,extra
 
   test:
       override:
       - mksdcard -l e 512M mysdcard.img
-      - emulator -avd circleci-android24 -no-audio  -sdcard mysdcard.img:
+      - emulator -avd circleci-android24 -no-audio -no-window -sdcard mysdcard.img:
           background: true
           parallel: true
 
