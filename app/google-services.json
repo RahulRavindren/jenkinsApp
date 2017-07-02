@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "215945084327",
+    "firebase_url": "https://jenkinsapp-88959.firebaseio.com",
+    "project_id": "jenkinsapp-88959",
+    "storage_bucket": "jenkinsapp-88959.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215945084327:android:5886187d153ea729",
+        "android_client_info": {
+          "package_name": "com.app.jenkinsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215945084327-3ur0tq2n9pem37isdgofairp2br6i4i1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.jenkinsapp",
+            "certificate_hash": "62c124f02ad95bf88d1751edb3e5a025db3d660b"
+          }
+        },
+        {
+          "client_id": "215945084327-i7unr8j2phca7ud5f1lb0so5ufb2l1gr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACIiYaHsmL0CeSUkDzmNkWVmYlBdJ8Hko"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215945084327-i7unr8j2phca7ud5f1lb0so5ufb2l1gr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

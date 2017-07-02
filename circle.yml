@@ -1,22 +1,17 @@
 machine:
-  java:
-    version: oraclejdk8
   environment:
-      ADB_INSTALL_TIMEOUT: 8
       GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
-
   dependencies:
        pre:
-          - echo y | android update sdk --no-ui --all --filter android-25,build-tools-25.0.0,platform-tools,extra-android-m2repository,extra-google-m2repository,extra-android-support
+          - echo y | android update sdk --no-ui --all --filter android-25,build-tools-25.0.2,platform-tools,extra
        cache_directories:
           - ~/.gradle
           - ~/.android
 
   test:
       override:
-
       - mksdcard -l e 512M mysdcard.img
-      - emulator -avd circleci-android22 -no-audio -no-window -sdcard mysdcard.img:
+      - emulator -avd circleci-android24 -no-audio -no-window -sdcard mysdcard.img:
           background: true
           parallel: true
 
