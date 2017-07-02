@@ -46,30 +46,4 @@ machine:
 
       post:
           #obtain test result artifacts
-          - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-          - find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
-          - find . -type f -regex ".*/build/outputs/androidTest-results/connected/flavors/MOCK/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
-          - mkdir -p $CIRCLE_TEST_REPORTS/reports/
-          - mv app/build/spoon/ $CIRCLE_TEST_REPORTS/reports/
-          - find . -type f -regex ".*/build/outputs/androidTest-results/connected/flavors/MOCK/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
-
-          #coverage atrifacts
-          - mkdir -p $CIRCLE_TEST_REPORTS/coverage/
-          - find . -type f -regex ".*/build/coverage/generateCodeCoverageReport/generateCodeCoverageReport.xml" -exec cp {} $CIRCLE_TEST_REPORTS/coverage/ \;
-          - bash <(curl -s https://codecov.io/bash) -f './app/build/coverage/generateCodeCoverageReport/generateCodeCoverageReport.xml'
-
-          #lint reports
-          - mkdir -p $CIRCLE_TEST_REPORTS/lint/
-          - mv app/build/reports/lint-report/ $CIRCLE_TEST_REPORTS/lint/
-
-          #pmd
-          - mkdir -p $CIRCLE_TEST_REPORTS/pmd/
-          - mv app/build/reports/pmd/ $CIRCLE_TEST_REPORTS/pmd/
-
-          #checkstyle
-          - mkdir -p $CIRCLE_TEST_REPORTS/checkstyle/
-          - mv app/build/reports/checkstyle/ $CIRCLE_TEST_REPORTS/checkstyle
-
-          #findbugs
-          - mkdir -p $CIRCLE_TEST_REPORTS/findbugs/
-          - mv app/build/reports/findbugs/ $CIRCLE_TEST_REPORTS/findbugs/
+          - cp -r app/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
