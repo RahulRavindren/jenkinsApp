@@ -42,7 +42,7 @@ machine:
       #TODO: copy google json mocks
 
       #running tests
-      - ./gradlew clean lintMockDebug pmd findbugs checkstyle generateCodeCoverageReport
+      - ./gradlew clean pmd findbugs checkstyle generateCodeCoverageReport
 
       post:
           #obtain test result artifacts
