@@ -2,16 +2,16 @@ apply plugin: 'jacoco'
 
 jacoco {
     toolVersion = "0.7.7.201606060606"
-    reportsDir = file("$buildDir/coverage")
+    reportsDir = file("build/coverage")
 }
 
-task generateCodeCoverageReport(type: JacocoReport, dependsOn: ["spoonMockDebugAndroidTest", "testMockDebugUnitTest"]) {
+task generateCodeCoverageReport(type: JacocoReport, dependsOn: ["spoonDebugAndroidTest", "testDebugUnitTest"]) {
     group = "code quality"
 
     description = "Generate Jacoco coverage reports"
 
     classDirectories = fileTree(
-            dir: "$buildDir/intermediates/classes/debug/com/app/jenkinsapp",
+            dir: "build/intermediates/classes/debug/com/app/jenkinsapp",
             excludes: ['android/**',
                        '**/R*.class',
                        '**/BuildConfig*',
@@ -24,8 +24,8 @@ task generateCodeCoverageReport(type: JacocoReport, dependsOn: ["spoonMockDebugA
 
     additionalSourceDirs = files('src/main/java/')
     sourceDirectories = files('src/main/java/')
-    executionData = files(["$buildDir/jacoco/testMockDebugUnitTest.exec",
-                           "${buildDir}/spoon/mock/debug/coverage/merged-coverage.ec"])
+    executionData = files(["build/jacoco/testDebugUnitTest.exec",
+                           "build/spoon/mock/debug/coverage/merged-coverage.ec"])
 
     reports {
         xml.enabled = true

@@ -42,12 +42,13 @@ machine:
       #TODO: copy google json mocks
 
       #running tests
-      - ./gradlew clean test pmd findbugs checkstyle
+      - ./gradlew clean lintDebug pmd findbugs checkstyle generateCodeCoverageReport
 
       post:
           #obtain test result artifacts
+          - cp -r app/build/outputs/apk $CIRCLE_ARTIFACTS
           - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-          - find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+          - find . -type f -regex ".*/build/test-results/testDebugUnitTest/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
           - find . -type f -regex ".*/build/outputs/androidTest-results/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
           - mkdir -p $CIRCLE_TEST_REPORTS/reports/
           - mv app/build/spoon/ $CIRCLE_TEST_REPORTS/reports/

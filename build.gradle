@@ -4,6 +4,7 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.2'
@@ -20,6 +21,7 @@ allprojects {
     repositories {
         jcenter()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -40,5 +42,6 @@ ext{
     powerMockVersion = '1.6.4'
     espressoRunnerVersion = '0.5'
     espressoVersion = '2.2.2'
+    dexMakerVersion = '1.4'
 
 }

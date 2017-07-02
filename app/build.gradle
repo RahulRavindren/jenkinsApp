@@ -93,6 +93,12 @@ dependencies {
     androidTestCompile "com.android.support.test.espresso:espresso-contrib:$rootProject.espressoVersion"
     androidTestCompile "com.android.support.test.espresso:espresso-web:$rootProject.espressoVersion"
     androidTestCompile "org.mockito:mockito-core:$rootProject.mockitoCoreVersion"
+    androidTestCompile "com.crittercism.dexmaker:dexmaker:$rootProject.dexMakerVersion"
+    androidTestCompile "com.crittercism.dexmaker:dexmaker-dx:$rootProject.dexMakerVersion"
+    androidTestCompile "com.crittercism.dexmaker:dexmaker-mockito:$rootProject.dexMakerVersion"
+    androidTestCompile 'com.squareup.spoon:spoon-client:1.5.4'
+    androidTestCompile 'com.github.fabioCollini:DaggerMock:0.6.1'
+    androidTestCompile 'com.jraska:falcon-spoon-compat:1.0.3'
 
     androidTestCompile "com.android.support:support-annotations:$rootProject.supportLibraryVersion"
     androidTestCompile "com.android.support:design:$rootProject.supportLibraryVersion"
