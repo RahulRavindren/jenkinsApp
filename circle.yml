@@ -4,6 +4,7 @@ machine:
   dependencies:
        pre:
           - echo y | android update sdk --no-ui --all --filter android-25,build-tools-25.0.0,platform-tools,extra
+          - export DISPLAY=:1.0
        cache_directories:
           - ~/.gradle
           - ~/.android
@@ -11,7 +12,7 @@ machine:
   test:
       override:
       - mksdcard -l e 512M mysdcard.img
-      - emulator -avd circleci-android24 -no-audio -no-window -sdcard mysdcard.img:
+      - emulator -avd circleci-android24 -no-audio  -sdcard mysdcard.img:
           background: true
           parallel: true
 
