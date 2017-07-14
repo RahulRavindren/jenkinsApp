@@ -1,4 +1,4 @@
-package com.app.jenkinsapp.utils;
+package com.app.jenkins_common.utils;
 
 
 import android.app.Application;

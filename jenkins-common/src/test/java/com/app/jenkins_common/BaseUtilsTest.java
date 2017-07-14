@@ -1,7 +1,7 @@
-package com.app.jenkinsapp;
+package com.app.jenkins_common;
 
 
-import com.app.jenkinsapp.utils.BaseUtils;
+import com.app.jenkins_common.utils.BaseUtils;
 
 import junit.framework.Assert;
 

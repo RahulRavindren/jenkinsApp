@@ -1,1 +1,3 @@
-include ':app'
+include ':app', ':jenkins-common'
+
+project(':jenkins-common').projectDir = new File('./jenkins-common')
