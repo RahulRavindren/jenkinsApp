@@ -1,8 +1,5 @@
 package com.app.jenkins_common;
 
-import android.support.test.runner.AndroidJUnit4;
-
-import org.junit.runner.RunWith;
 
 
 /**
@@ -10,13 +7,13 @@ import org.junit.runner.RunWith;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-@RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
-//  @Test
-//  public void useAppContext() throws Exception {
-//    // Context of the app under test.
-//    final Context appContext = InstrumentationRegistry.getTargetContext();
-//
-//    assertEquals("com.app.jenkins_common.test", appContext.getPackageName());
-//  }
-}
+//@RunWith(AndroidJUnit4.class)
+//public class ExampleInstrumentedTest {
+////  @Test
+////  public void useAppContext() throws Exception {
+////    // Context of the app under test.
+////    final Context appContext = InstrumentationRegistry.getTargetContext();
+////
+////    assertEquals("com.app.jenkins_common.test", appContext.getPackageName());
+////  }
+//}
