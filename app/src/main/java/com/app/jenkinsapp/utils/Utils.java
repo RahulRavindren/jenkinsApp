@@ -35,7 +35,6 @@ public final class Utils {
 
   /**
    * convert pixel to DP
-   *
    * @param pixel - pixel value
    * @return - int DP
    */
@@ -46,7 +45,6 @@ public final class Utils {
 
   /**
    * convert DP to pixel
-   *
    * @param dp - DP value
    * @return - int pixel
    */
@@ -57,7 +55,6 @@ public final class Utils {
 
   /**
    * get device screen width
-   *
    * @return - int
    */
   public int getDeviceScreenWidth() {
@@ -70,7 +67,6 @@ public final class Utils {
 
   /**
    * get device screen height
-   *
    * @return - int
    */
   public int getDeviceScreenHeight() {
@@ -83,7 +79,6 @@ public final class Utils {
 
   /**
    * get device screen density
-   *
    * @return - int
    */
   public int getDeviceDensity() {
@@ -96,7 +91,6 @@ public final class Utils {
 
   /**
    * get device screen width in DP
-   *
    * @return - int
    */
   public int getDeviceScreenWidthDP() {
@@ -109,7 +103,6 @@ public final class Utils {
 
   /**
    * get device screen height in DP
-   *
    * @return - int
    */
   public int getDeviceScreenHeightDP() {
@@ -122,7 +115,6 @@ public final class Utils {
 
   /**
    * Drawable from resId
-   *
    * @param resId - int drawable resId
    * @return - Drawable
    */
@@ -136,7 +128,6 @@ public final class Utils {
 
   /**
    * get string from resources
-   *
    * @param args  - args
    * @param resId - int string resId
    * @return - String
@@ -159,7 +150,6 @@ public final class Utils {
 
   /**
    * get string array from resources
-   *
    * @param resId - int string-array resId
    * @return - String array
    */

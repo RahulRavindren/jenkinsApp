@@ -8,7 +8,8 @@ dependencies:
 test:
       override:
       - mksdcard -l e 512M mysdcard.img
-      - emulator -avd circleci-android24 -no-audio -no-window -sdcard mysdcard.img:
+      # android 24 emulator does not run https://discuss.circleci.com/t/android-24-google-apis-emulator-does-not-boot/9801
+      - emulator -avd circleci-android22 -no-audio -no-window -sdcard mysdcard.img:
           background: true
           parallel: true
 
