@@ -27,7 +27,7 @@ test:
       #TODO: copy google json mocks
 
       #running tests
-      - ./gradlew clean lintDebug pmd findbugs checkstyle generateCodeCoverageReport
+      - ./gradlew clean lintDebug pmd findbugs checkstyle generateCodeCoverageReport --stacktrace
 
       post:
           #obtain test result artifacts
