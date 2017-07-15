@@ -79,10 +79,6 @@ dependencies {
     compile 'com.jakewharton.timber:timber:4.5.1'
     compile "com.squareup:otto:$rootProject.ottoVersion"
 
-    //dagger
-    apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
-    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
-    provided "javax.annotation:jsr250-api:$rootProject.jsrVersion"
 
 
     testCompile "org.mockito:mockito-core:$rootProject.mockitoCoreVersion"
@@ -108,9 +104,9 @@ dependencies {
     androidTestCompile "com.crittercism.dexmaker:dexmaker:$rootProject.dexMakerVersion"
     androidTestCompile "com.crittercism.dexmaker:dexmaker-dx:$rootProject.dexMakerVersion"
     androidTestCompile "com.crittercism.dexmaker:dexmaker-mockito:$rootProject.dexMakerVersion"
-    androidTestCompile 'com.squareup.spoon:spoon-client:1.5.4'
     androidTestCompile 'com.github.fabioCollini:DaggerMock:0.6.1'
     androidTestCompile 'com.jraska:falcon-spoon-compat:1.0.3'
+    androidTestCompile 'com.squareup.spoon:spoon-client:1.6.4'
 
     androidTestCompile "com.android.support:support-annotations:$rootProject.supportLibraryVersion"
     androidTestCompile "com.android.support:design:$rootProject.supportLibraryVersion"

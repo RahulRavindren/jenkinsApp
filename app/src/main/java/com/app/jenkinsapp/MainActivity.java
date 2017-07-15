@@ -1,12 +1,7 @@
 package com.app.jenkinsapp;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import com.app.jenkins_common.activities.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
-  @Override
-  protected void onCreate(final Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-  }
+public class MainActivity extends BaseActivity {
+
 }

@@ -7,9 +7,11 @@ buildscript {
         maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.2'
+        classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        classpath 'com.stanfy.spoon:spoon-gradle-plugin:1.2.2'
+        classpath('com.stanfy.spoon:spoon-gradle-plugin:1.2.2') {
+            exclude module: "guava"
+        }
         classpath 'me.tatarka:gradle-retrolambda:3.6.1'
 
 
