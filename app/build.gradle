@@ -79,7 +79,10 @@ dependencies {
     compile 'com.jakewharton.timber:timber:4.5.1'
     compile "com.squareup:otto:$rootProject.ottoVersion"
 
-
+    //dagger
+    apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
+    provided "javax.annotation:jsr250-api:$rootProject.jsrVersion"
 
     testCompile "org.mockito:mockito-core:$rootProject.mockitoCoreVersion"
     testCompile 'junit:junit:4.12'

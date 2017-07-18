@@ -1,4 +1,4 @@
-package com.app.jenkins_common.dagger;
+package com.app.jenkinsapp.components;
 
 
 import android.app.Application;

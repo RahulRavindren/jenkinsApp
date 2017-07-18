@@ -3,13 +3,11 @@ package com.app.jenkins_common.lib;
 
 import android.content.SharedPreferences;
 
-import javax.inject.Inject;
 
 public final class StringPreferenceType implements SharedPreferenceType<String> {
   private final SharedPreferences sharedPreferences;
   private String defaultValue = "";
 
-  @Inject
   public StringPreferenceType(final SharedPreferences sharedPreferences) {
     this.sharedPreferences = sharedPreferences;
   }

@@ -1,10 +1,11 @@
 package com.app.jenkinsapp;
 
 import android.app.Application;
+import android.support.compat.BuildConfig;
 
-import com.app.jenkins_common.dagger.MainComponent;
-import com.app.jenkins_common.dagger.MainModule;
-import com.app.jenkinsapp.dependencies.DaggerMainComponent;
+import com.app.jenkinsapp.components.DaggerMainComponent;
+import com.app.jenkinsapp.components.MainComponent;
+import com.app.jenkinsapp.components.MainModule;
 
 import timber.log.Timber;
 
@@ -21,6 +22,7 @@ public class MainApplication extends Application {
     }
 
     //dagger
+
     mainComponent = DaggerMainComponent.builder()
             .mainModule(new MainModule(this)).build();
   }

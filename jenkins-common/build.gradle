@@ -29,10 +29,6 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
     compile "com.android.support:design:$rootProject.supportLibraryVersion"
 
-    //dagger
-    apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
-    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
-    provided "javax.annotation:jsr250-api:$rootProject.jsrVersion"
 
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
