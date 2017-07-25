@@ -1,8 +1,11 @@
 package com.app.jenkins_common.presenter;
 
-/**
- * Created by rahulravindran on 15/07/17.
- */
 
-public class BasePresenter {
+import com.app.jenkins_common.view.BaseView;
+
+public abstract class BasePresenter implements PresenterLifeCycle{
+  /**
+   * @param view - View class attached
+   * */
+  protected abstract void attachView(BaseView view);
 }

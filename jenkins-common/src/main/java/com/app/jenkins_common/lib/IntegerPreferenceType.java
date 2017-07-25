@@ -3,12 +3,11 @@ package com.app.jenkins_common.lib;
 
 import android.content.SharedPreferences;
 
-
-public final class StringPreferenceType implements SharedPreferenceType<String> {
+public final class IntegerPreferenceType implements SharedPreferenceType<Integer>{
   private final SharedPreferences sharedPreferences;
-  private String defaultValue = "";
+  private final int defaultValue = -1;
 
-  public StringPreferenceType(final SharedPreferences sharedPreferences) {
+  public IntegerPreferenceType(SharedPreferences sharedPreferences) {
     this.sharedPreferences = sharedPreferences;
   }
 
@@ -18,31 +17,32 @@ public final class StringPreferenceType implements SharedPreferenceType<String> 
   }
 
   @Override
-  public synchronized String get(final String key) {
-    if (notNullPref()) {
-      return sharedPreferences.getString(key, defaultValue);
+  public Integer get(String key) {
+    if (notNullPref()){
+      return sharedPreferences.getInt(key,defaultValue);
     } else {
       return defaultValue;
     }
   }
 
   @Override
-  public boolean isSet(final String key) {
+  public boolean isSet(String key) {
     return sharedPreferences.contains(key);
   }
 
   @Override
-  public synchronized void set(final String key, final String value) {
+  public void set(String key, Integer value) {
     if (notNullPref()) {
       final SharedPreferences.Editor editor = sharedPreferences.edit();
-      editor.putString(key, value);
+      editor.putInt(key,value);
       editor.apply();
     }
+
   }
 
   @Override
-  public synchronized void delete(final String key) {
-    if (notNullPref()) {
+  public void delete(String key) {
+    if (notNullPref()){
       sharedPreferences.edit().remove(key).commit();
     }
   }

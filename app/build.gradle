@@ -84,6 +84,10 @@ dependencies {
     compile "com.google.dagger:dagger:$rootProject.daggerVersion"
     provided "javax.annotation:jsr250-api:$rootProject.jsrVersion"
 
+    //rx
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+
     testCompile "org.mockito:mockito-core:$rootProject.mockitoCoreVersion"
     testCompile 'junit:junit:4.12'
     testCompile 'org.hamcrest:hamcrest-junit:2.0.0.0'
