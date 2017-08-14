@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.app.jenkinsapp">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!--TODO : look into manifest merger problems with drawables -->
+    <uses-sdk
+        android:maxSdkVersion="25"
+        android:minSdkVersion="19"
+        tools:overrideLibrary="android.support.graphics.drawable.animated"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

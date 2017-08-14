@@ -1,0 +1,5 @@
+android_sdk_repository(
+  name= "androidsdk",
+  api_level = 25,
+  build_tools_version = "25.0.0",
+)
