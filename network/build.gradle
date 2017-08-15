@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 
 android {
@@ -30,6 +32,7 @@ dependencies {
     compile "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
     compile "com.squareup.okio:okio:$rootProject.okioVersion"
     compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.kotlinVersion"
 
     //dagger
     apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"

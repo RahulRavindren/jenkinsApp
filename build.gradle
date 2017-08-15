@@ -13,6 +13,8 @@ buildscript {
             exclude module: "guava"
         }
         classpath 'me.tatarka:gradle-retrolambda:3.6.1'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.3'
+        classpath 'org.jetbrains.kotlin:kotlin-android-extensions:1.1.3'
 
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -36,6 +38,7 @@ ext{
     targetSdkVersion = 25
     compileSdkVersion = 25
     buildToolsVersion = '25.0.0'
+    kotlinVersion = '1.1.3'
 
     //dependency
     supportLibraryVersion = '25.0.0'
