@@ -13,7 +13,7 @@ constructor(private val connectivityManager: NetworkUtils) : Interceptor {
 
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response? {
-        if (connectivityManager.isOnline) {
+        if (!connectivityManager.isOnline) {
             return null
         }
         val builder = chain.request().newBuilder()

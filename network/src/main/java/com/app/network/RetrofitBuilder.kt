@@ -1,4 +1,6 @@
 package com.app.network
 
 
-class RetrofitBuilder
+class RetrofitBuilder {
+
+}
