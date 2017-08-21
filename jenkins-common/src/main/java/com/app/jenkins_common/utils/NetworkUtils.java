@@ -12,6 +12,10 @@ public class NetworkUtils {
     init();
   }
 
+  public NetworkUtils() {
+
+  }
+
   private void init() {
     if (intent != null) {
       final String action = intent.getAction();
@@ -22,7 +26,7 @@ public class NetworkUtils {
     }
   }
 
-  private boolean isOnline() {
+  public boolean isOnline() {
     return false;
   }
 }
