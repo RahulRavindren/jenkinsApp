@@ -78,7 +78,6 @@ dependencies {
     compile project(':jenkins-common')
     compile project(':network')
     compile 'com.jakewharton.timber:timber:4.5.1'
-    compile "com.squareup:otto:$rootProject.ottoVersion"
 
     //dagger
     apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
