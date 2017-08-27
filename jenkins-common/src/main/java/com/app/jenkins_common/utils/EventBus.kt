@@ -15,7 +15,12 @@ class EventBus {
 
         fun getInstance(threadEnforcer: ThreadEnforcer?): EventBus {
             if (INSTANCE == null) {
-                INSTANCE = EventBus(threadEnforcer)
+                synchronized(EventBus.javaClass) {
+                    if (INSTANCE == null) {
+                        INSTANCE = EventBus(threadEnforcer)
+                    }
+                }
+
             }
             return INSTANCE!!
         }

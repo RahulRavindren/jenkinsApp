@@ -7,7 +7,7 @@ import okhttp3.Response
 import java.io.IOException
 import javax.inject.Inject
 
-class ConnecitivityInterceptor @Inject
+class ConnectivityInterceptor @Inject
 constructor(private val connectivityManager: NetworkUtils) : Interceptor {
 
 
