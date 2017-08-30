@@ -78,7 +78,6 @@ dependencies {
     compile project(':jenkins-common')
     compile project(':network')
     compile 'com.jakewharton.timber:timber:4.5.1'
-    compile "com.squareup:otto:$rootProject.ottoVersion"
 
     //dagger
     apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
@@ -88,6 +87,9 @@ dependencies {
     //rx
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
     compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.rxjavaVersion"
+    debugCompile "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanaryVersion"
+
 
     testCompile "org.mockito:mockito-core:$rootProject.mockitoCoreVersion"
     testCompile 'junit:junit:4.12'
