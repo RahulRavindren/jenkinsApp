@@ -1,9 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-
-
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
@@ -23,6 +23,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
@@ -37,15 +40,4 @@ dependencies {
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
     compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
     compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.rxjavaVersion"
-
-    //dagger
-    apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
-    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
-    provided "javax.annotation:jsr250-api:$rootProject.jsrVersion"
-
-    testCompile 'junit:junit:4.12'
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
 }

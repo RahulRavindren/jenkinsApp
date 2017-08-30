@@ -3,6 +3,7 @@ package com.app.network
 import android.content.Context
 import com.app.jenkins_common.utils.NetworkUtils
 import com.app.network.interceptors.BaseHeaderInterceptor
+import com.app.network.interceptors.CacheControlInterceptor
 import com.app.network.interceptors.ConnectivityInterceptor
 import okhttp3.Cache
 import okhttp3.OkHttpClient
@@ -10,29 +11,12 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
+import javax.inject.Singleton
 
-
-class RetrofitBuilder {
-    private var mContext: Context
-
-    constructor(mContext: Context) {
-        this.mContext = mContext
-    }
-
-    companion object {
-        private var INSTANCE: RetrofitBuilder? = null
-
-        fun getInstance(context: Context): RetrofitBuilder {
-            if (INSTANCE == null) {
-                synchronized(RetrofitBuilder.javaClass) {
-                    if (INSTANCE == null) {
-                        INSTANCE = RetrofitBuilder(context)
-                    }
-                }
-            }
-            return INSTANCE!!
-        }
-    }
+@Singleton
+class RetrofitBuilder @Inject constructor(private var mContext: Context,
+                                          private var networkUtils: NetworkUtils) {
 
     private fun getCacheDir(context: Context): Cache {
         return Cache(context.cacheDir, 10);
@@ -44,7 +28,9 @@ class RetrofitBuilder {
                 .cache(getCacheDir(mContext))
                 .connectTimeout(60, TimeUnit.SECONDS)
                 .addInterceptor(BaseHeaderInterceptor())
-                .addInterceptor(ConnectivityInterceptor(NetworkUtils())).build()
+                .addInterceptor(ConnectivityInterceptor(networkUtils))
+                .addInterceptor(CacheControlInterceptor(networkUtils))
+                .build()
     }
 
     fun getRetrofitBuilder(): Retrofit {
