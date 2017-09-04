@@ -7,4 +7,5 @@ import dagger.Component;
 @Singleton
 @Component(modules = {MainModule.class})
 public interface MainComponent extends MainGraph {
+
 }

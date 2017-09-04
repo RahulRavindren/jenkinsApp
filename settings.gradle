@@ -1,4 +1,2 @@
 include ':app', ':jenkins-common', ':network'
 
-project(':jenkins-common').projectDir = new File('./jenkins-common')
-project(':network').projectDir = new File('./network')
